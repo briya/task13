@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+	
+<title>task13</title>
+<link rel="shortcut icon" href="../img/favicon.ico">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+</head>
+<body>
+<label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+<button id="button">确认填写</button>
+	
+<div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+	
+<script type="text/javascript">
+(function() {
+	/*
+	在注释下方写下代码
+	给按钮button绑定一个点击事件
+	在事件处理函数中
+	获取aqi-input输入的值，并显示在aqi-display中
+	*/
+	function $(id){//定义方法便于元素添加事件时的获取使用，适用于多元素事件
+		return document.getElementById(id);
+	}
+	var input=document.getElementById("aqi-input"); //获取文本框元素
+	var display=document.getElementById("aqi-display");//获取展示元素
+	//var btn=document.getElementById("button");//获取按钮元素
+	//btn.onclick=function(){
+	$("button").onclick=function(){//按钮单击事件
+		var text=input.value;
+		if(text.length>0){
+			display.innerHTML=text;	
+		}
+		else{
+			display.innerHTML="没有录入";
+		}
+	
+	}
+})();
+	
+</script>
+</body>
+</html>
